@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+  
+  </body>
+  <script>
+   const p = window.location.protocol === 'https' ? "wss": "ws"
+   let ws = new WebSocket(`${p}://localhost:3000`);
+  
+   ws.onmessage = (e) => { console.log(e.data)}
+  </script>
+<html>
