@@ -11,7 +11,7 @@
   </body>
   <script>
    const p = window.location.protocol === 'https' ? "wss": "ws"
-   let ws = new WebSocket(`${p}://localhost:3000`);
+   let ws = new WebSocket(`${p}://${window.location.host}`);
   
    ws.onmessage = (e) => { console.log(e.data)}
   </script>
