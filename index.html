@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
-    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <p>On my way to becoming a full-snack engineer</p>  
   </body>
   <script>
    const p = window.location.protocol === 'https' ? "wss": "ws"
-   let ws = new WebSocket(`${p}://${window.location.host}`);
+   let host = window.location.host || 'localhost:3000'
+   console.log({host})
+   let ws = new WebSocket(`${p}://${host}`);
   
    ws.onmessage = (e) => { console.log(e.data)}
   </script>
